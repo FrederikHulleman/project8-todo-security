@@ -46,7 +46,7 @@
 	<header class="header">
     <div class="col-container">
   		<h1>
-        <a class="logo" href="./">
+        <a class="logo" href="../inc">
           <svg viewbox="0 0 64 64" class="logo-icon"><use xlink:href="#logo_icon"></use></svg>
           <span class="logo-name">Personal Todo App</span>
         </a>
@@ -58,7 +58,7 @@
       </ul>
         <ul class="nav">
             <li class="nav-item task<?php if ($page == "account") { echo " on"; } ?>"><a class="nav-link" href="/account.php">My Account</a></li>
-            <li class="nav-item tasks"><a class="nav-link" href="/inc/doLogout.php">Logout</a></li>
+            <li class="nav-item tasks"><a class="nav-link" href="/procedures/doLogout.php">Logout</a></li>
             <li class="nav-item tasks<?php if ($page == "login") { echo " on"; } ?>"><a class="nav-link" href="/login.php">Login</a></li>
             <li class="nav-item tasks<?php if ($page == "register") { echo " on"; } ?>"><a class="nav-link" href="/register.php">Register</a></li>
         </ul>

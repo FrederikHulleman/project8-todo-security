@@ -4,7 +4,7 @@ require_once 'inc/bootstrap.php';
 $pageTitle = "Time Tracker";
 $page = null;
 
-include 'inc/header.php';
+include 'templates/header.php';
 ?>
     <div class="col-container actions-container">
 
@@ -36,4 +36,4 @@ include 'inc/header.php';
                 Register
 		</div>
 
-<?php include("inc/footer.php"); ?>
+<?php include("templates/footer.php"); ?>

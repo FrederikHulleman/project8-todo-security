@@ -14,7 +14,7 @@ if ($filter=='all') {
     $tasks = getIncompleteTasks();
 }
 
-include 'inc/header.php';
+include 'templates/header.php';
 ?>
 
     <div class="col-container page-container">
@@ -40,7 +40,7 @@ include 'inc/header.php';
                         <?php
                         foreach ($tasks as $item) {
                             echo "<tr><td>";
-                            echo "<input type='checkbox' onChange='javascript:location=\"inc/actions_tasks.php?action=status&task_id=".$item['id'];
+                            echo "<input type='checkbox' onChange='javascript:location=\"procedures/actions_tasks.php?action=status&task_id=".$item['id'];
                             if (!empty($filter)) {
                                 echo "&filter=$filter";
                             }
@@ -55,7 +55,7 @@ include 'inc/header.php';
                             echo "<a href='task.php?id=" . $item['id'] . "'>" . $item['task'] . "</a>";
                             echo "</td><td>";
 
-                            echo "<a href='inc/actions_tasks.php?action=delete&task_id=".$item['id'];
+                            echo "<a href='procedures/actions_tasks.php?action=delete&task_id=".$item['id'];
                             echo "' onclick=\"return confirm('Are you sure you want tot delete this task?');\"";
                             echo "'>Delete</a>";
                             echo "</td></tr>\n";
@@ -67,4 +67,4 @@ include 'inc/header.php';
         </div>
     </div>
 
-<?php include("inc/footer.php"); ?>
+<?php include("templates/footer.php"); ?>

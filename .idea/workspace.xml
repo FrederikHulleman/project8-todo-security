@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fe7df0-0ef1-49b8-9fd4-3f7d81ccd38e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/inc/settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/functions_auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/functions_user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procedures/doLogout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procedures/doRegister.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/actions_tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/procedures/actions_tasks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/doLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/procedures/doLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/todo.db" beforeDir="false" afterPath="$PROJECT_DIR$/inc/todo.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.php" beforeDir="false" afterPath="$PROJECT_DIR$/task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/task_list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,43 +31,6 @@
     <execution>
       <executable />
     </execution>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>svg</find>
-      <find>#</find>
-      <find>4C3</find>
-      <find>AACCB1</find>
-      <find>icon</find>
-      <find>nav-</find>
-      <find>navbar-</find>
-      <find>nav</find>
-      <find>xMinYMin</find>
-      <find>meet</find>
-      <find>include 'connection.php';</find>
-      <find>array</find>
-      <find>id</find>
-      <find>task_id</find>
-      <find>title</find>
-      <find>url</find>
-      <find />
-      <find>M</find>
-      <find>alert</find>
-      <find>li</find>
-      <find>58477</find>
-      <find>color</find>
-      <find>updateTask</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>AB3E5B</replace>
-      <replace>87BDB1</replace>
-      <replace>global $db;</replace>
-      <replace>task_id</replace>
-      <replace>id</replace>
-      <replace>task</replace>
-      <replace>,</replace>
-      <replace>status</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,7 +129,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/procedures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -163,7 +141,13 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/procedures" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/procedures" />
+      <recent name="$PROJECT_DIR$/inc" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -179,7 +163,7 @@
       <updated>1551129154154</updated>
       <workItem from="1551129155517" duration="9533000" />
       <workItem from="1551203513957" duration="10181000" />
-      <workItem from="1581534687413" duration="2565000" />
+      <workItem from="1581534687413" duration="4704000" />
     </task>
     <servers />
   </component>
@@ -202,6 +186,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="565" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1581537554263" />
+    <state x="0" y="89" key="SettingsEditor" timestamp="1581540038273">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581540038273" />
+    <state x="24" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1581540034488">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="24" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581540034488" />
   </component>
   <component name="masterDetails">
     <states>

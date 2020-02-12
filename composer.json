@@ -1,11 +1,11 @@
 {
-    "name": "FrederikHulleman/project8-todo-security",
+    "name": "frederikhulleman/project8-todo-security",
     "description": "Teamtreehouse PHP TechDegree project #8",
     "type": "project",
     "require": {
         "symfony/http-foundation": "^4.2",
         "firebase/php-jwt": "^5.0",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^3.3"
     },
     "authors": [
         {
