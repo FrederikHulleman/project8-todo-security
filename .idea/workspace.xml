@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fe7df0-0ef1-49b8-9fd4-3f7d81ccd38e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/inc/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/bootstrap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +179,7 @@
       <updated>1551129154154</updated>
       <workItem from="1551129155517" duration="9533000" />
       <workItem from="1551203513957" duration="10181000" />
-      <workItem from="1581534687413" duration="1972000" />
+      <workItem from="1581534687413" duration="2565000" />
     </task>
     <servers />
   </component>
@@ -198,10 +198,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="155" y="261" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1581536327075" />
-    <state x="565" y="380" key="NewPhpFileDialog" timestamp="1581535535926">
+    <state x="565" y="380" key="NewPhpFileDialog" timestamp="1581537554263">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="565" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1581535535926" />
+    <state x="565" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1581537554263" />
   </component>
   <component name="masterDetails">
     <states>
