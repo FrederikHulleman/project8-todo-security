@@ -4,9 +4,7 @@ requireAuth();
 
 $action = request()->get('action');
 $task_id = request()->get('task_id');
-$task = filter_var(request()->get('task'),FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
-//$task = request()->query->filter('task', '', false, INPUT_SANITIZE_STRING);
-//$task = request()->get('task');
+$task = trim(filter_var(request()->get('task'),FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES));
 $status = request()->get('status');
 
 if(!empty($task_id)) {
