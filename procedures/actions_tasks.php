@@ -8,7 +8,11 @@ $task = request()->get('task');
 $status = request()->get('status');
 
 if(!empty($task_id)) {
-
+    $owner = getOwner($task_id);
+    if(!isOwner($owner['id'])) {
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
+    }
 }
 
 $url="../task_list.php";
