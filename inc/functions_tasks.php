@@ -47,6 +47,9 @@ function getTask($task_id)
         echo "Error!: " . $e->getMessage() . "<br />";
         return false;
     }
+    if ($task['owner_id'] != getAuthenticatedUser()) {
+        return false;
+    }
     return $task;
 }
 function getOwner($task_id)
@@ -66,12 +69,17 @@ function getOwner($task_id)
 }
 function createTask($data)
 {
+    if (!getAuthenticatedUser()) {
+        return false;
+    }
+
     global $db;
 
     try {
-        $statement = $db->prepare('INSERT INTO tasks (task, status) VALUES (:task, :status)');
+        $statement = $db->prepare('INSERT INTO tasks (task, status, owner_id) VALUES (:task, :status, :owner)');
         $statement->bindParam('task', $data['task']);
         $statement->bindParam('status', $data['status']);
+        $statement->bindParam('owner_id', getAuthenticatedUser());
         $statement->execute();
     } catch (Exception $e) {
         echo "Error!: " . $e->getMessage() . "<br />";
@@ -84,7 +92,10 @@ function updateTask($data)
     global $db;
 
     try {
-        getTask($data['task_id']);
+        $task = getTask($data['task_id']);
+        if ($task['owner_id'] != getAuthenticatedUser()) {
+            return false;
+        }
         $statement = $db->prepare('UPDATE tasks SET task=:task, status=:status WHERE id=:id');
         $statement->bindParam('task', $data['task']);
         $statement->bindParam('status', $data['status']);
@@ -101,7 +112,10 @@ function updateStatus($data)
     global $db;
 
     try {
-        getTask($data['task_id']);
+        $task = getTask($data['task_id']);
+        if ($task['owner_id'] != getAuthenticatedUser()) {
+            return false;
+        }
         $statement = $db->prepare('UPDATE tasks SET status=:status WHERE id=:id');
         $statement->bindParam('status', $data['status']);
         $statement->bindParam('id', $data['task_id']);
@@ -117,7 +131,10 @@ function deleteTask($task_id)
     global $db;
 
     try {
-        getTask($task_id);
+        $task = getTask($task_id);
+        if ($task['owner_id'] != getAuthenticatedUser()) {
+            return false;
+        }
         $statement = $db->prepare('DELETE FROM tasks WHERE id=:id');
         $statement->bindParam('id', $task_id);
         $statement->execute();
