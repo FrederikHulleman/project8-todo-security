@@ -4,14 +4,10 @@ requireAuth();
 
 $pageTitle = "Task | Time Tracker";
 $page = "task";
-
-if (request()->get('id')) {
-    list($task_id, $task, $status, $owner_id) = getTask(request()->get('id'));
-    var_dump(getTask(request()->get('id')));
-    if(!isOwner($owner_id)) {
-        echo "whoops";
-        //$session->getFlashBag()->add('error', 'Not Authorized');
-        //redirect('/login.php');
+if (!empty(request()->get('id'))) {
+    if(!(list($task_id, $task, $status, $owner_id) = getTask(request()->get('id')))) {
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
     }
 }
 

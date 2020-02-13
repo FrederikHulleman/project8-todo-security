@@ -18,7 +18,6 @@ function isOwner($ownerId)
   if (!isAuthenticated()) {
     return false;
   }
-  var_dump(decodeAuthCookie('auth_user_id'));
   return $ownerId == decodeAuthCookie('auth_user_id');
 }
 
@@ -34,7 +33,7 @@ function saveUserData($user)
   $expTime =  time() + 3600;
   $jwt = \Firebase\JWT\JWT::encode([
       'iss' => request()->getBaseUrl(),
-      'sub' => (int) $user['id'],
+      'sub' => $user['id'],
       'exp' => $expTime,
       'iat' => time(),
       'nbf' => time()

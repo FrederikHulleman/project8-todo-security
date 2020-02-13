@@ -55,6 +55,7 @@ function getTask($task_id)
     }
     return $task;
 }
+
 function getOwner($task_id)
 {
     global $db;

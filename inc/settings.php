@@ -15,7 +15,7 @@ set_exception_handler("exception_handler");
 try {
     $db = new PDO( 'sqlite:'.__DIR__.'/todo.db' );
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    //$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch ( \Exception $e ) {
     echo 'Error connecting to the Database: ' . $e->getMessage();
     exit;
