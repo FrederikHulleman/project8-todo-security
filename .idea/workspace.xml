@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fe7df0-0ef1-49b8-9fd4-3f7d81ccd38e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/nav.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procedures/changePassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/functions_tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/functions_tasks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/todo.db" beforeDir="false" afterPath="$PROJECT_DIR$/inc/todo.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procedures/actions_tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/procedures/actions_tasks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.php" beforeDir="false" afterPath="$PROJECT_DIR$/task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/task_list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,14 +132,14 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/procedures" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/procedures" />
       <recent name="$PROJECT_DIR$/inc" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/procedures" />
+      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -149,7 +154,9 @@
       <updated>1551129154154</updated>
       <workItem from="1551129155517" duration="9533000" />
       <workItem from="1551203513957" duration="10181000" />
-      <workItem from="1581534687413" duration="5679000" />
+      <workItem from="1581534687413" duration="5962000" />
+      <workItem from="1581580268606" duration="206000" />
+      <workItem from="1581580862356" duration="3168000" />
     </task>
     <servers />
   </component>
@@ -176,6 +183,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581540038273" />
+    <state x="437" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1581580396323">
+      <screen x="0" y="23" width="1440" height="831" />
+    </state>
+    <state x="437" y="282" key="com.intellij.ide.util.TipDialog/0.23.1440.831@0.23.1440.831" timestamp="1581580396323" />
     <state x="24" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1581540034488">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

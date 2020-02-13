@@ -1,10 +1,15 @@
 <?php
-require_once "bootstrap.php";
+require_once __DIR__ .'/../inc/bootstrap.php';
+requireAuth();
 
 $action = request()->get('action');
 $task_id = request()->get('task_id');
 $task = request()->get('task');
 $status = request()->get('status');
+
+if(!empty($task_id)) {
+
+}
 
 $url="../task_list.php";
 if (request()->get('filter')) {

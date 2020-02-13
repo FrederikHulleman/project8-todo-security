@@ -1,11 +1,16 @@
 <?php
 require_once 'inc/bootstrap.php';
+requireAuth();
 
 $pageTitle = "Task | Time Tracker";
 $page = "task";
 
 if (request()->get('id')) {
-    list($task_id, $task, $status) = getTask(request()->get('id'));
+    list($task_id, $task, $status, $owner_id) = getTask(request()->get('id'));
+    if(!isOwner($owner_id)) {
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
+    }
 }
 
 include 'templates/header.php';

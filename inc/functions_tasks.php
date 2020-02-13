@@ -5,7 +5,16 @@ function getTasks($where = null)
 {
     global $db;
     $query = "SELECT * FROM tasks ";
-    if (!empty($where)) $query .= "WHERE $where";
+    if (!empty($where)) {
+        $query .= "WHERE $where AND ";
+    } else {
+        $query .= "WHERE ";
+    }
+    if (!getAuthenticatedUser()) {
+        return false;
+    }
+    $query .= "owner_id = " . getAuthenticatedUser();
+
     $query .= " ORDER BY id";
     try {
         $statement = $db->prepare($query);
@@ -30,7 +39,7 @@ function getTask($task_id)
     global $db;
 
     try {
-        $statement = $db->prepare('SELECT id, task, status FROM tasks WHERE id=:id');
+        $statement = $db->prepare('SELECT id, task, status, owner_id FROM tasks WHERE id=:id');
         $statement->bindParam('id', $task_id);
         $statement->execute();
         $task = $statement->fetch();
@@ -39,6 +48,21 @@ function getTask($task_id)
         return false;
     }
     return $task;
+}
+function getOwner($task_id)
+{
+    global $db;
+
+    try {
+        $statement = $db->prepare('SELECT owner_id FROM tasks WHERE id=:id');
+        $statement->bindParam('id', $task_id);
+        $statement->execute();
+        $owner = $statement->fetch();
+    } catch (Exception $e) {
+        echo "Error!: " . $e->getMessage() . "<br />";
+        return false;
+    }
+    return $owner;
 }
 function createTask($data)
 {
