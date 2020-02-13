@@ -9,7 +9,7 @@ $status = request()->get('status');
 
 if(!empty($task_id)) {
     $owner = getOwner($task_id);
-    if(!isOwner($owner['id'])) {
+    if(!isOwner($owner['owner_id'])) {
         $session->getFlashBag()->add('error', 'Not Authorized');
         redirect('/login.php');
     }

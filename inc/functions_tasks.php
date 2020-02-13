@@ -3,7 +3,7 @@
 
 function getTasks($where = null)
 {
-    global $db;
+    global $db, $session;
     $query = "SELECT * FROM tasks ";
     if (!empty($where)) {
         $query .= "WHERE $where AND ";
@@ -11,7 +11,8 @@ function getTasks($where = null)
         $query .= "WHERE ";
     }
     if (!getAuthenticatedUser()) {
-        return false;
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
     }
     $query .= "owner_id = " . getAuthenticatedUser();
 
@@ -36,7 +37,7 @@ function getCompleteTasks()
 }
 function getTask($task_id)
 {
-    global $db;
+    global $db, $session;
 
     try {
         $statement = $db->prepare('SELECT id, task, status, owner_id FROM tasks WHERE id=:id');
@@ -47,8 +48,9 @@ function getTask($task_id)
         echo "Error!: " . $e->getMessage() . "<br />";
         return false;
     }
-    if ($task['owner_id'] != getAuthenticatedUser()) {
-        return false;
+    if (!isOwner($task['owner_id'])) {
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
     }
     return $task;
 }
@@ -69,11 +71,12 @@ function getOwner($task_id)
 }
 function createTask($data)
 {
-    if (!getAuthenticatedUser()) {
-        return false;
-    }
+    global $db, $session;
 
-    global $db;
+    if (!getAuthenticatedUser()) {
+        $session->getFlashBag()->add('error', 'Not Authorized');
+        redirect('/login.php');
+    }
 
     try {
         $statement = $db->prepare('INSERT INTO tasks (task, status, owner_id) VALUES (:task, :status, :owner)');
@@ -89,12 +92,13 @@ function createTask($data)
 }
 function updateTask($data)
 {
-    global $db;
+    global $db, $session;
 
     try {
         $task = getTask($data['task_id']);
-        if ($task['owner_id'] != getAuthenticatedUser()) {
-            return false;
+        if (!isOwner($task['owner_id'])) {
+            $session->getFlashBag()->add('error', 'Not Authorized');
+            redirect('/login.php');
         }
         $statement = $db->prepare('UPDATE tasks SET task=:task, status=:status WHERE id=:id');
         $statement->bindParam('task', $data['task']);
@@ -109,12 +113,13 @@ function updateTask($data)
 }
 function updateStatus($data)
 {
-    global $db;
+    global $db, $session;
 
     try {
         $task = getTask($data['task_id']);
-        if ($task['owner_id'] != getAuthenticatedUser()) {
-            return false;
+        if (!isOwner($task['owner_id'])) {
+            $session->getFlashBag()->add('error', 'Not Authorized');
+            redirect('/login.php');
         }
         $statement = $db->prepare('UPDATE tasks SET status=:status WHERE id=:id');
         $statement->bindParam('status', $data['status']);
@@ -128,12 +133,13 @@ function updateStatus($data)
 }
 function deleteTask($task_id)
 {
-    global $db;
+    global $db, $session;
 
     try {
         $task = getTask($task_id);
-        if ($task['owner_id'] != getAuthenticatedUser()) {
-            return false;
+        if (!isOwner($task['owner_id'])) {
+            $session->getFlashBag()->add('error', 'Not Authorized');
+            redirect('/login.php');
         }
         $statement = $db->prepare('DELETE FROM tasks WHERE id=:id');
         $statement->bindParam('id', $task_id);
