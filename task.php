@@ -7,9 +7,11 @@ $page = "task";
 
 if (request()->get('id')) {
     list($task_id, $task, $status, $owner_id) = getTask(request()->get('id'));
+    var_dump(getTask(request()->get('id')));
     if(!isOwner($owner_id)) {
-        $session->getFlashBag()->add('error', 'Not Authorized');
-        redirect('/login.php');
+        echo "whoops";
+        //$session->getFlashBag()->add('error', 'Not Authorized');
+        //redirect('/login.php');
     }
 }
 

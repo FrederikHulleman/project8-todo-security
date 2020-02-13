@@ -10,13 +10,14 @@ function getTasks($where = null)
     } else {
         $query .= "WHERE ";
     }
-    if (!getAuthenticatedUser()) {
+    if (!decodeAuthCookie('auth_user_id')) {
         $session->getFlashBag()->add('error', 'Not Authorized');
         redirect('/login.php');
     }
-    $query .= "owner_id = " . getAuthenticatedUser();
+    $query .= "owner_id = " . decodeAuthCookie('auth_user_id');
 
     $query .= " ORDER BY id";
+
     try {
         $statement = $db->prepare($query);
         $statement->execute();
@@ -73,7 +74,7 @@ function createTask($data)
 {
     global $db, $session;
 
-    if (!getAuthenticatedUser()) {
+    if (!decodeAuthCookie('auth_user_id')) {
         $session->getFlashBag()->add('error', 'Not Authorized');
         redirect('/login.php');
     }
@@ -82,7 +83,7 @@ function createTask($data)
         $statement = $db->prepare('INSERT INTO tasks (task, status, owner_id) VALUES (:task, :status, :owner)');
         $statement->bindParam('task', $data['task']);
         $statement->bindParam('status', $data['status']);
-        $statement->bindParam('owner_id', getAuthenticatedUser());
+        $statement->bindValue('owner', decodeAuthCookie('auth_user_id'));
         $statement->execute();
     } catch (Exception $e) {
         echo "Error!: " . $e->getMessage() . "<br />";
